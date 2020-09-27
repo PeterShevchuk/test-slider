@@ -1,0 +1,1 @@
+"use strict";for(var sliders=document.querySelectorAll(".sliders"),_loop=function(s){sliders[s].addEventListener("click",function(){toogleClass(s)})},i=0;i<sliders.length;i++)_loop(i);var toogleClass=function(s){sliders[s].classList.remove("active"),sliders.length-1!==s?sliders[s+1].classList.add("active"):sliders[0].classList.add("active")};

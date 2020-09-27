@@ -1,0 +1,309 @@
+.sliders {
+  min-width: 1440px;
+  position: absolute;
+  padding: 30px;
+  display: none;
+  opacity: 0;
+  &.active {
+    right: 0;
+    display: block;
+    animation-duration: 1s;
+    animation-name: active;
+    animation-fill-mode: forwards;
+  }
+  & > .slider__border {
+    position: relative;
+    height: calc(100vh - 60px);
+    width: calc(100vw - 60px);
+    border: 6px solid #ffffff;
+    padding: 20px;
+    z-index: 2222;
+  }
+}
+
+.slider {
+  &__image-elipse {
+    position: absolute;
+    background-image: url('../images//sliderOne/ellipse1.png');
+    background-repeat: no-repeat;
+    background-size: 700px 600px;
+    width: 700px;
+    height: 600px;
+    right: 0;
+    bottom: 0;
+    animation-duration: 1s;
+    animation-name: elipse;
+    animation-fill-mode: forwards;
+    z-index: 1;
+  }
+  &__menu {
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    & > .slider__menu-item:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    & > .slider__menu-item:first-child {
+      margin-right: auto;
+    }
+  }
+
+  &__menu-link {
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Source Code Pro';
+    font-size: 14px;
+    color: #ffffff;
+    border: 4px solid rgba(255, 255, 255, 0);
+    padding: 10px 20px;
+    &--active {
+      font-weight: 900;
+      text-transform: uppercase;
+      border-color: #ffffff;
+      font-family: Montserrat;
+      position: relative;
+      &::after {
+        position: absolute;
+        content: '';
+        width: 16px;
+        height: 16px;
+        background-color: #00cdde;
+        background-image: url('../images/sliderOne/ellipse2.png');
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        right: -4px;
+        bottom: -4px;
+      }
+    }
+  }
+
+  &__content {
+    padding-left: 50px;
+  }
+  &__title {
+    font-size: 5rem;
+    font-weight: 900;
+    color: #ffffff;
+    & .slider__text-color {
+      color: $one-title-color;
+    }
+  }
+
+  &__line {
+    width: 86px;
+    border: 4px solid $one-line-color;
+    margin-bottom: 20px;
+  }
+  &__text {
+    font-size: 22px;
+    font-family: 'Montserrat';
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    line-height: 1.273;
+    width: 300px;
+    margin-bottom: 20px;
+  }
+
+  &__btn > a:first-child {
+    margin-right: 20px;
+  }
+  &__image-lines {
+    background-image: url('../images/sliderOne/lines.png');
+    background-repeat: no-repeat;
+    background-size: 35px 282px;
+    width: 35px;
+    height: 282px;
+    position: absolute;
+    right: 515px;
+    bottom: 33%;
+  }
+  &__image-phone {
+    background-image: url('../images/sliderOne/iPhone.png');
+    background-repeat: no-repeat;
+    background-size: 700px auto;
+    width: 700px;
+    height: 600px;
+    right: -50px;
+    position: absolute;
+    animation-duration: 5s;
+    animation-name: slider__image-phone;
+    animation-fill-mode: forwards;
+    z-index: 3333;
+  }
+  &__pagination {
+    position: absolute;
+    right: 50%;
+    bottom: 10px;
+    margin: 0 auto;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    background-color: $one-bg-color;
+    background-image: url('../images/sliderOne/pagination.png'),
+      url('../images/sliderOne/arrow-down.png');
+    background-position: top center, bottom center;
+    background-repeat: no-repeat;
+    z-index: 9999;
+    animation-duration: 0.2s;
+    animation-name: active;
+    animation-fill-mode: forwards;
+  }
+  &__image-hand {
+    background-image: url('../images/sliderTwo/hand.png');
+    background-repeat: no-repeat;
+    background-size: 500px auto;
+    width: 700px;
+    height: 700px;
+    right: -50px;
+    position: absolute;
+    animation-duration: 2s;
+    animation-name: slider__image-hand;
+    animation-fill-mode: forwards;
+    z-index: 2;
+  }
+  &__one {
+    background-color: $one-bg-color;
+  }
+  &__two {
+    background-color: $two-bg-color;
+    & .slider__pagination {
+      background-color: $two-bg-color;
+      background-image: url('../images/sliderTwo/pagination.png'),
+        url('../images/sliderTwo/arrow-down.png');
+    }
+    & .slider__menu-link--active::after {
+      background-color: #0044fb;
+    }
+    & .slider__text-color {
+      color: $two-title-color;
+    }
+    & .slider__line {
+      border-color: $two-line-color;
+    }
+    & .slider__title {
+      font-size: 6rem;
+    }
+    & .slider__image-elipse {
+      background-image: url('../images/sliderTwo/ellipse1.png');
+      animation-name: elipse_two;
+      top: 0;
+    }
+    & .slider__image-lines {
+      background-image: url('../images/sliderTwo/lines.png');
+      right: 170px;
+    }
+  }
+  &__three {
+    background-color: $three-bg-color;
+    & .slider__pagination {
+      background-color: $three-bg-color;
+      background-image: url('../images/sliderThree/pagination.png'),
+        url('../images/sliderThree/arrow-down.png');
+    }
+    & .slider__title {
+      font-size: 6rem;
+      &-color {
+        color: $three-title-color;
+      }
+    }
+    & .slider__line {
+      border-color: $three-line-color;
+    }
+    & .slider__image-elipse {
+      background-image: url('../images/sliderThree/ellipse1.png');
+      animation-name: elipse_two;
+
+      background-size: 600px 500px;
+      width: 600px;
+      height: 500px;
+      top: 0;
+    }
+    & .slider__image {
+      &-hand {
+        background-image: url('../images/sliderThree/hand.png');
+        background-size: 600px auto;
+        width: 600px;
+        height: 736px;
+        right: 200px;
+        z-index: 2100;
+      }
+      &-lines {
+        background-image: url('../images/sliderOne/lines.png');
+        right: 660px;
+        z-index: 1;
+        top: 20%;
+      }
+    }
+    & .slider__text {
+      width: 400px;
+      &-color {
+        color: $three-line-color;
+      }
+    }
+  }
+}
+
+@keyframes active {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes elipse {
+  0% {
+    background-position: right -300px bottom -300px;
+  }
+
+  100% {
+    background-position: right 0 bottom 0;
+  }
+}
+
+@keyframes slider__image-phone {
+  0% {
+    bottom: -200px;
+  }
+
+  20% {
+    bottom: -50px;
+  }
+
+  40% {
+    bottom: -200px;
+  }
+
+  60% {
+    bottom: -50px;
+  }
+
+  80% {
+    bottom: -200px;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
+@keyframes elipse_two {
+  0% {
+    background-position: right -300px top -300px;
+  }
+
+  100% {
+    background-position: right 0 top 0;
+  }
+}
+@keyframes slider__image-hand {
+  0% {
+    top: -200px;
+  }
+
+  100% {
+    top: 0;
+  }
+}

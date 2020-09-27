@@ -1,0 +1,18 @@
+html {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  position: relative;
+  font-family: Montserrat;
+}
